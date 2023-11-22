@@ -1,0 +1,46 @@
+{
+  "nodes": {
+    "hix": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1701046693,
+        "narHash": "sha256-05cu9KRS0zqHCtSrtEzyW2ra0WMAOJ3NQx5MWgr0wv4=",
+        "owner": "tek",
+        "repo": "hix",
+        "rev": "b84659973c48b354ebfdf8faa86a49d22648a446",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tek",
+        "ref": "managed-github-pr",
+        "repo": "hix",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1699948764,
+        "narHash": "sha256-etefGjZwNF58NmFusFI/4i645HB4ymODXTvWRKOYBA4=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "4f2bd72692b1aae0a6db485ed3a83d1a933c2cac",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "4f2bd72692b1aae0a6db485ed3a83d1a933c2cac",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "hix": "hix"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
