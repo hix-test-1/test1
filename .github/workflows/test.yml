@@ -1,0 +1,23 @@
+name: test
+on: workflow_dispatch
+permissions:
+  contents: write
+  pull-requests: write
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - id: main
+      run: |
+        stamp=$(date '+%s')
+        branch="hix/bump-$stamp"
+        echo data > $stamp
+        echo "branch=$branch" >> $GITHUB_OUTPUT
+        ./write-params.bash
+    - name: pr
+      id: cpr
+      uses: peter-evans/create-pull-request@v5
+      with: ${{ steps.main.outputs }}
