@@ -1,0 +1,28 @@
+name: test
+on: workflow_dispatch
+permissions:
+  contents: write
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - id: main
+      run: |
+        stamp=$(date '+%s')
+        branch="hix/bump-$stamp"
+        echo data > $stamp
+        echo "branch=$branch" >> $GITHUB_OUTPUT
+    - name: pr
+      id: cpr
+      uses: peter-evans/create-pull-request@v5
+      with:
+        commit-message: bump
+        committer: hix <noreply@github.com>
+        signoff: false
+        branch: ${{ steps.main.outputs.branch }}
+        delete-branch: true
+        title: bump
+        body: bump
