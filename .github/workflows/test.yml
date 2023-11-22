@@ -1,0 +1,11 @@
+name: test
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - run: ./script.bash
+    - run: gh pr create --title bump --base main
