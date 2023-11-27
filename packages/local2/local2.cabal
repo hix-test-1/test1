@@ -19,5 +19,5 @@ library
       lib
   build-depends:
       base ==4.*
-    , path
+    , path ==0.9.*
   default-language: Haskell2010
