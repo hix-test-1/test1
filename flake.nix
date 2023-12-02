@@ -1,7 +1,7 @@
 {
   description = "hix test project";
 
-  inputs.hix.url = "github:tek/hix/managed-github-pr";
+  inputs.hix.url = "github:tek/hix";
 
   outputs = {self, hix, ...}: hix.lib.flake ({config, lib, ...}: {
     managed = {

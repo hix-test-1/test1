@@ -16,7 +16,7 @@ jobs:
           extra-trusted-public-keys = tek.cachix.org-1:+sdc73WFq8aEKnrVv5j/kuhmnW2hQJuqdPJF5SnaCBk=
     - uses: DeterminateSystems/magic-nix-cache-action@main
     - id: bump
-      run: nix run .#bump.github-pr
+      run: nix run .#bump -- --output=ga-pr
     - name: pr
       if: steps.bump.outputs.commit-message
       uses: peter-evans/create-pull-request@v5
